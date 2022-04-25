@@ -1,0 +1,74 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="UTF-8">
+  <meta http-equiv="X-UA-Compatible" content="IE=edge">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <title>Document</title>
+  <link rel="stylesheet" href="https://cdn.jsdelivr.net/npm/bootstrap@5.1.3/dist/css/bootstrap.min.css">
+  <script src="https://cdn.jsdelivr.net/npm/bootstrap@5.1.3/dist/js/bootstrap.min.js" integrity="sha384-QJHtvGhmr9XOIpI6YVutG+2QOK9T+ZnN4kzFN1RtK3zEFEIsxhlmWl5/YESvpZ13" crossorigin="anonymous"></script>
+</head>
+<body>
+  <form action="/<%= val.id%>"  method="POST" enctype="multipart/form-data">
+    <!-- <input type="hidden" name="_method" value="PUT"> -->
+    <div class="form-group">
+      <label for="title">Title:</label>
+      <input type="text" class="form-control" id="title" name="title" value = "<%= val.title %>">
+    </div>
+    <div class="form-group">
+      <label for="pwd">Content:</label>
+      <input type="content" class="form-control" name="content" value = "<%= val.content %>">
+    </div>
+
+    <div class="form-group">
+      <label for="">isBreaking:</label>
+      
+      <% if(val.isBreaking == 'no'){ %>
+
+        <input class="form-check-input" type="radio" name="isBreaking" value="no"  id="1"  checked >
+        <label class="form-check-label" for="isBreaking"   >
+          No
+        </label>
+      
+      
+        <input class="form-check-input" type="radio" value="yes" name="isBreaking" id="2"  >
+        <label class="form-check-label" for="isBreaking"  >
+          Yes
+        </label>
+       <% }else{ %>
+
+        <input class="form-check-input" type="radio" name="isBreaking" value="no"  id="1"  checked >
+        <label class="form-check-label" for="isBreaking"   >
+          No
+        </label>
+      
+      
+        <input class="form-check-input" type="radio" value="yes" name="isBreaking" id="2"  >
+        <label class="form-check-label" for="isBreaking"  >
+          <% } %>
+
+    </div>
+
+     <div class="form-group">
+      <% var dbCategories = val.category.split(',') %>
+      <label for="">Categories:</label>
+        <label><input type="checkbox" name="category" value="bitcoin" <%= dbCategories.includes('bitcoin') ? 'checked' : '' %> > Bitcoin</label>
+        <label><input type="checkbox" name="category" value="crypt" <%= dbCategories.includes('crypto') ? 'checked' : '' %> > Crypto</label>
+        <label><input type="checkbox" name="category" value="tesla" <%= dbCategories.includes('tesla') ? 'checked' : '' %> > Tesla</label>
+        <label><input type="checkbox" name="category" value="africa" <%= dbCategories.includes('africa') ? 'checked' : '' %> > Africa</label>
+    </div> 
+    
+
+
+    <div class="form-group">
+      <label for="pwd">Image:</label>
+      
+      <input type="file" class="form-control" name="image" >
+    </div>
+
+    <button type="submit" class="btn btn-success">Submit</button>
+  </form>
+</body>
+
+<script src="https://cdn.jsdelivr.net/npm/bootstrap@5.1.3/dist/js/bootstrap.min.js" integrity="sha384-QJHtvGhmr9XOIpI6YVutG+2QOK9T+ZnN4kzFN1RtK3zEFEIsxhlmWl5/YESvpZ13" crossorigin="anonymous"></script>
+</html>

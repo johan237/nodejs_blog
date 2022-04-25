@@ -1,0 +1,67 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>FASHION</title>
+    <link rel="stylesheet" href="css/blog.css">
+    <link rel="stylesheet" href="../public/css/main.css">
+    <link rel="stylesheet" href="../public/css/blog.css">
+    <link rel="stylesheet" href="css/main.css">
+    <link rel="preconnect" href="https://fonts.googleapis.com">
+    <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+    <link href="https://fonts.googleapis.com/css2?family=PT+Serif:ital,wght@0,400;0,700;1,400;1,700&display=swap" rel="stylesheet">
+    <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.1.1/css/all.min.css" integrity="sha512-KfkfwYDsLkIlwQp6LFnl8zNdLGxu9YAA1QvwINks4PhcElQSvqcyVLLD9aMhXd13uQjoXtEKNosOWaZqXgel0g==" crossorigin="anonymous" referrerpolicy="no-referrer" />
+    <link href="https://fonts.googleapis.com/css2?family=Alegreya+SC:ital,wght@1,900&display=swap" rel="stylesheet">
+</head>
+<body class="container">
+
+    <header class="flex">
+        <div class="readBlog logo">
+            <a href="/index.html">  FASHION</a>
+        </div>
+    </header>
+    
+    <main>
+
+
+        <h1 class="title">
+            <%= val.title%>
+        </h1>
+
+        <div class="img_container">
+            <% if(api == true) {%>
+                <img src="<%= val.urlToImage%>" alt="" srcset="">
+            <% }else{%>
+                <img src="/images<%= val.imageUrl%>" alt="" srcset="">
+                <% }%>
+        </div>
+
+        <p>
+            <%=val.content%>.
+        </p>
+
+        <div class="similar-post">
+
+            <h1 class="logo">Similar Posts (NOT YET WORKING UNDER DEVELOPMENT) </h1>
+
+            <div class="flex">
+                <div class="readBlog post">
+                    <img src="./images/pexels-vincent-rivaud-4282674.jpg" alt="" class="post">
+                    <h1><a href="">Destinations you want to visit soon.</a></h1>
+                </div>
+                <div class="readBlog post">
+                    <img src="./images/pexels-vincent-rivaud-4282674.jpg" alt="" class="post">
+                    <h1><a href="">Destinations you want to visit soon.</a></h1>
+                </div>
+                <div class="readBlog post">
+                    <img src="./images/pexels-vincent-rivaud-4282674.jpg" alt="" class="post">
+                    <h1><a href="">Destinations you want to visit soon.</a></h1>
+                </div>
+            </div>
+
+        </div>
+    </main>
+</body>
+</html>

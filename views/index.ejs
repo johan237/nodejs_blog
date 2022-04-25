@@ -1,0 +1,362 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Document</title>
+    <link rel="stylesheet" href="css/main.css">
+    <link rel="preconnect" href="https://fonts.googleapis.com">
+    <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+    <link href="https://fonts.googleapis.com/css2?family=PT+Serif:ital,wght@0,400;0,700;1,400;1,700&display=swap" rel="stylesheet">
+    <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.1.1/css/all.min.css" integrity="sha512-KfkfwYDsLkIlwQp6LFnl8zNdLGxu9YAA1QvwINks4PhcElQSvqcyVLLD9aMhXd13uQjoXtEKNosOWaZqXgel0g==" crossorigin="anonymous" referrerpolicy="no-referrer" />
+    <link href="https://fonts.googleapis.com/css2?family=Alegreya+SC:ital,wght@1,900&display=swap" rel="stylesheet">
+</head>
+<body>
+
+<header> 
+    <div class="container flex">
+        <nav class="nav flex">
+
+            <div class="logo">
+                FASHION
+            </div>
+              
+                    <ul class="flex">
+                        <li><a href="" class="active">Home</a></li>
+                        <!-- <li><a href="" class="active"></a></li> -->
+                        <li><a href="/#subscribe" >Subscribe</a></li>
+                        <li><a href="" >Contact</a></li>
+                        <li><a href="#all__cat" >Categories</a></li>
+                    </ul>
+      
+        </nav>
+    </div>
+   
+
+    <div class="breakingNews">
+        <div class="breakingNews__content">
+
+        <% for(let i=0; i< rows.length; i++){  %>
+
+                <% if( rows[i].isBreaking == 'yes' ){ %>
+                    <img src="images/<%=rows[i].imageUrl%>" alt="" srcset
+                    ="">
+                    <div class="breakingNews__content__news">
+                        <small class="breakingNews__category"><%= rows[i].category %>, breaking</small>
+                        <h1 class="breaking-title"> <a href="post/<%=rows[i].id%>api"><%= rows[i].title%></a> </h1>
+                    </div>
+                    <% break %>
+                <%  }%>          
+        <%   }%>
+        </div>
+    </div>
+</header>
+
+<main>
+    <div class="container flex">
+        <div class="main-left flex">
+            
+            <% rows.forEach(row => { %>
+                <div class="post">
+                     <img src='images/<%=row.imageUrl%>' width="300" height="300" alt="image" srcset="">
+    
+                    <div class="post-content">
+                        <span class="category"><%=row.category %> </span>
+                        <h1><a href="post/<%=row.id%>"><%=row.title %> </a> </h1>
+                    </div>
+                </div>   
+            <% }); %> 
+            
+            <div class="post">
+                <img src="./images/pexels-keith-lobo-10175519.jpg" alt="">
+
+                <div class="post-content">
+                    <span class="category">SPORTS</span>
+                    <h1>One of Saturn’s largest rings may be newer than anyone</h1>
+                </div>
+            </div>
+
+            <div class="post">
+                <img src="./images/pexels-keith-lobo-10175519.jpg" alt="">
+
+                <div class="post-content">
+                    <span class="category">SPORTS</span>
+                    <h1>One of Saturn’s largest rings may be newer than anyone</h1>
+                </div>
+            </div>
+
+ 
+                <img src="./images/pexels-keith-lobo-10175519.jpg" alt="">
+
+                <div class="post-content">
+                    <span class="category">SPORTS</span>
+                    <h1>One of Saturn’s largest rings may be newer than anyone</h1>
+                </div>
+            </div>
+
+            <div class="long-post">
+                <img src="./images/pexels-keith-lobo-10175519.jpg" alt="">
+
+                <div class="post-content">
+                    <span class="category">SPORTS</span>
+                    <h1><a href="#">Donot Click. Leads to nowhere</a></h1>
+                    <p>Sorry friend this post leads to no where. I will add some lorem ipsum here.
+                        &nbsp; Lorem ipsum dolor sit amet consectetur adipisicing elit. Distinctio doloribus eos libero quasi ad accusantium rem exercitationem omnis optio, porro quia cum nam enim a perspiciatis culpa molestias iusto sequi?
+                    </p>
+                </div>  
+            </div>
+
+            <div class="flex" style="display: flex ;flex-direction: column;">
+                <h1>API RESPONSE START</h1>
+                <div class="flex">
+
+                    <% for(var i =0; i<5; i++ ){ %>
+                        <div class="post">
+                            <img src="<%= news[i].urlToImage %>" alt="">
+                            
+                            <div class="post-content">
+                                <span class="category">BITCOIN</span>
+                                <h1> <a href="/post/a<%= i %>"><%= news[i].title %></a> </h1>
+                            </div>
+                        </div>
+                    <%}%>
+                </div>
+
+
+                <h1>API RESPONSE FINISH</h1>
+            </div>
+
+        </div>
+
+        <div class="main-right">
+            <div class="about__author left__box">
+                About the author
+            </div>
+
+            <div class="about__card">
+                <img src="./images/pexels-keith-lobo-10175519.jpg" alt="">
+
+                <div class="post-content">
+                    <h1 class="author__name">Johan Tchassem</h1>
+                    <p class="author__about">Hello there, I'm Johan. I love problem solving, coding, design and sharing my knowlegde through blogging. This is a personal project I have built with love. </p>
+                </div>
+            </div>
+
+            <div class="left__box">
+                Feature Posts
+            </div>
+
+            <div class="featured__post about__card">
+                <img src="./images/pexels-keith-lobo-10175519.jpg" alt="">
+
+                <div class="post-content">
+                    <span class="category">SPORTS</span>
+                    <h1>One of Saturn’s largest rings may be newer than anyone</h1>
+                </div>
+            </div>
+
+            <div class="featured__post about__card">
+                <img src="./images/pexels-keith-lobo-10175519.jpg" alt="">
+
+                <div class="post-content">
+                    <span class="category">SPORTS</span>
+                    <h1>One of Saturn’s largest rings may be newer than anyone</h1>
+                </div>
+            </div>
+
+            <div class="left__box" id="all__cat">
+                Categories
+            </div>
+
+            <ul class="all__categories" >
+                <li><a href="">Bitcoin</a> <span>(10)</span></li>
+                <li><a href="">Crypto</a> <span>(3)</span></li>
+                <li><a href="">Tesla</a> <span>(27)</span></li>
+                <li><a href="">Programming</a> <span>(2)</span></li>
+                <li><a href="">Google</a> <span>(9)</span></li>
+            </ul>
+
+            <div class="left__box">
+                Social media
+            </div>
+
+            <div class="social__icons flex">
+                <div class="flex">
+                    <i class="fa-brands fa-facebook-f"></i>
+                    <span>150k</span>
+                    <span>Followers</span>
+                </div>
+
+                <div class="flex">
+                    <i class="fa-brands fa-instagram"></i>
+                    <span>150k</span>
+                    <span>Followers</span>
+                </div>
+
+                <div class="flex">
+                    <i class="fa-brands fa-pinterest-p"></i>
+                    <span>150k</span>
+                    <span>Followers</span>
+                </div>
+
+                <div class="flex">
+                    <i class="fa-brands fa-behance"></i>
+                    <span>150k</span>
+                    <span>Followers</span>
+                </div>
+
+                <div class="flex">
+                    <i class="fa-brands fa-dribbble"></i>
+                    <span>150k</span>
+                    <span>Followers</span>
+                </div>
+
+                <div class="flex">
+                    <i class="fa-brands fa-youtube"></i>
+                    <span>150k</span>
+                    <span>Followers</span>
+                </div>
+
+                <div class="flex">
+                    <i class="fa-brands fa-twitter"></i>
+                    <span>150k</span>
+                    <span>Followers</span>
+                </div>
+
+                <div class="flex">
+                    <i class="fa-brands fa-google-plus"></i>
+                    <span>150k</span>
+                    <span>Followers</span>
+                </div>
+
+                <div class="flex">
+                    <i class="fa-brands fa-vimeo-v"></i>
+                    <span>150k</span>
+                    <span>Followers</span>
+                </div>
+            </div>
+
+            <div class="left__box">
+                Tags
+            </div>
+
+            <div class="tags flex">
+                <div class="flex">Google</div>
+                <div class="flex">Meta</div>
+                <div class="flex">Crypto</div>
+                <div class="flex">Tesla</div>
+                <div class="flex">Bitcoin</div>
+                <div class="flex">Etheruem</div>
+                <div class="flex">Blockchain</div>
+                <div class="flex">Amazon</div>
+                <div class="flex">Alibaba</div>
+            </div>
+
+        </div>
+    </div>
+</main>
+
+<footer class="footer">
+    <h1 class="footer__title">Follow me on instagram corazon237 (johantchassem)</h1>
+
+    <div class="images flex">
+     
+        <div class="image">
+            <img src="../public/images/image-1649418148276.jpg" alt="">
+        </div>
+
+        <div class="image">
+            <img src="../public/images/image-1649418429932.jpg" alt="">
+        </div>
+
+        <div class="image">
+            <img src="../public/images/pexels-darius-krause-9215308.jpg" alt="">
+        </div>
+
+        <div class="image">
+            <img src="../public/images/image-1649419501479.jpg" alt="">
+        </div>
+
+        <div class="image">
+            <img src="../public/images/pexels-figen-kokol-11614039.jpg" alt="">
+        </div>
+        <div class="image">
+            <img src="../public/images/pexels-roberto-nickson-2531236.jpg" alt="">
+        </div>
+       
+    </div>
+
+    <div class="bottom">
+        <h1>FASHION</h1>
+
+        <ul class="flex">
+            <li><a href="">Home</a></li>
+            <li><a href="">Subscribe</a></li>
+            <li><a href="">Contact</a></li>
+        </ul>
+
+        <h1 class="cotact">
+            Connect with me!!
+        </h1>
+
+        <ul class="flex">
+
+            <li>
+                <a href="">
+                    <i class="fa-brands fa-instagram"></i>
+                </a>
+            </li>
+
+            <li class="flex">
+                <a href="">
+                    <i class="fa-solid fa-phone"></i>
+                </a>
+                <p>+237 695357818</p>
+            </li>
+
+            <li>
+                <a href="">
+                    <i class="fa-brands fa-twitter"></i>
+                </a>
+                
+            </li>
+            <li>
+                <a href="">
+                    <i class="fa-brands fa-google-plus"></i>
+                </a>
+            </li>
+            <li>
+                <a href="">
+                    <i class="fa-brands fa-linkedin"></i>
+                </a>
+            </li>
+        </ul>
+
+        <hr>
+    </div>
+
+    <div id="subscribe" class="newsletter">
+
+        <h1>Sign Up for the newsletter</h1>
+
+        <p>If you want relevant updates occasionally, sign up for the private newsletter. Your email is never shared.</p>
+
+        <form action="" class="flex">
+            <input type="email" required> 
+            <button type="submit">Subscribe</button>
+        </form>
+    </div>
+
+    <div class="last flex">
+      <div>
+        @2022 Johan's Work. All Right Reserved. Made with 😍
+      </div>
+    </div>
+
+</footer>
+
+
+</body>
+<script src="app.js"></script>
+</html>
